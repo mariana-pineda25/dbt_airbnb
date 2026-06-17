@@ -19,7 +19,10 @@ models:
     +materialized: view
 
     src:
-      +materialized: view
+      +materialized: ephemeral
 
     dim:
+      +materialized: view
+
+    fct:
       +materialized: table
