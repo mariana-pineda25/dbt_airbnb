@@ -2,8 +2,9 @@ WITH raw_listings AS (
     SELECT
         *
     FROM
-        AIRBNB.RAW.RAW_LISTINGS
+        DBT_AIRBNB.RAW.RAW_LISTINGS
 )
+-- column naming
 SELECT
     id AS listing_id,
     name AS listing_name,

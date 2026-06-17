@@ -9,16 +9,12 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-seeds:
+#seeds:
   # Builds seeds into '<your_schema_name>_raw'
-  airbnb:
-    +schema: raw
+  #dbt_airbnb:
+    #+schema: raw
 
 models:
-  airbnb:
+  dbt_airbnb:
     +static_analysis: strict
     # Materialize staging models as views, and marts as tables
-    staging:
-      +materialized: view
-    marts:
-      +materialized: table
