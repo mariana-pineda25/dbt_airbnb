@@ -2,7 +2,7 @@ with raw_reviews as (
 
     select
         *
-    from dbt_airbnb.raw.raw_reviews
+    from {{ source('dbt_airbnb', 'reviews') }}
 
 )
 

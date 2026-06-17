@@ -3,7 +3,7 @@ with raw_hosts as (
     select
         *
     from
-        dbt_airbnb.raw.raw_hosts
+       {{ source('dbt_airbnb', 'hosts') }}
 
 )
 
