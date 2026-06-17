@@ -17,3 +17,9 @@ clean-targets:
 models:
   dbt_airbnb:
     +materialized: view
+
+    src:
+      +materialized: view
+
+    dim:
+      +materialized: table

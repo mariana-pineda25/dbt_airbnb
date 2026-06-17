@@ -1,19 +1,20 @@
-WITH raw_listings AS (
-    SELECT
+with raw_listings as (
+
+    select
         *
-    FROM
-        DBT_AIRBNB.RAW.RAW_LISTINGS
+    from dbt_airbnb.raw.raw_listings
+
 )
+
 -- column naming
-SELECT
-    id AS listing_id,
-    name AS listing_name,
+select
+    id as listing_id,
+    name as listing_name,
     listing_url,
     room_type,
     minimum_nights,
     host_id,
-    price AS price_str,
+    price as price_str,
     created_at,
     updated_at
-FROM
-    raw_listings
+from raw_listings
