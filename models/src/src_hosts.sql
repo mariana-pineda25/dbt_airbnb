@@ -1,14 +1,17 @@
-WITH raw_hosts AS (
-    SELECT
+with raw_hosts as (
+
+    select
         *
-    FROM
-       DBT_AIRBNB.RAW.RAW_HOSTS
+    from
+        dbt_airbnb.raw.raw_hosts
+
 )
-SELECT
-    id AS host_id,
-    NAME AS host_name,
+
+select
+    id as host_id,
+    name as host_name,
     is_superhost,
     created_at,
     updated_at
-FROM
+from
     raw_hosts

@@ -1,15 +1,16 @@
-WITH raw_reviews AS (
-    SELECT
+with raw_reviews as (
+
+    select
         *
-    FROM
-        DBT_AIRBNB.RAW.RAW_REVIEWS
+    from dbt_airbnb.raw.raw_reviews
+
 )
+
 -- column naming
-SELECT
+select
     listing_id,
-    date AS review_date,
+    date as review_date,
     reviewer_name,
     comments as review_comments,
     sentiment as review_sentiment
-FROM
-    raw_reviews
+from raw_reviews
