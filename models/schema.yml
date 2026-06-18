@@ -37,18 +37,22 @@ models:
     config:
       contract: # Catch data type changes or column name changes
         enforced: true
+    constraints:
+      - type: primary_key # Currently NOT enforced in SF as well as Primary Key Constraints
+        columns: [host_id]
 
     columns:
       - name: host_id
         data_type: integer
+        constraints:
+          - type: not_null
         data_tests:
           - unique
-          - not_null
 
       - name: host_name
         data_type: string
-        data_tests:
-          - not_null
+        constraints:
+          - type: not_null # Removing the data_tests since constraints are defined
 
       - name: is_superhost
         data_type: string
