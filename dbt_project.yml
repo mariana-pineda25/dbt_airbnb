@@ -32,3 +32,6 @@ models:
 
     mart:
       +materialized: table
+
+data_tests:
+  +store_failures: true #store failed records in a the schema dev_dbt_test__audit, use the SQL query generated to review the errors
