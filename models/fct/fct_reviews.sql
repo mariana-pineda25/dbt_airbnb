@@ -8,6 +8,8 @@
 with src_reviews as (
 
     select
+    --Surrogate key generation using dbt_utils package
+    {{ dbt_utils.generate_surrogate_key(['listing_id', 'review_date', 'reviewer_name', 'review_text']) }} as review_id,
         *
     from {{ ref('src_reviews') }}
 
