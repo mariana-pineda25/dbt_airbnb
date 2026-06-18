@@ -34,4 +34,5 @@ models:
       +materialized: table
 
 data_tests:
-  +store_failures: true #store failed records in a the schema dev_dbt_test__audit, use the SQL query generated to review the errors
+  +store_failures: true
+  +schema: _tests_failures #store failed records in a the schema, use the SQL query generated to review the errors
