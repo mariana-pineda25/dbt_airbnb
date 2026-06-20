@@ -1,5 +1,6 @@
 models:
   - name: dim_listings_cleansed
+    description: "This is the dimension table for listings, containing cleansed and standardized data about Airbnb listings."
     data_tests:
       - minimum_row_count:
           arguments:
@@ -8,11 +9,13 @@ models:
     columns:
 
      - name: listing_id
+       description: "Primary key for the listings"
        data_tests:
          - unique
          - not_null
 
      - name: host_id
+       description: "Host ID, foreign key to dim_hosts_cleansed"
        data_tests:
          - not_null
          - relationships:
@@ -21,6 +24,7 @@ models:
                field: host_id
 
      - name: room_type
+       description: "Type of room available for booking"
        data_tests:
          - accepted_values:
              arguments:
