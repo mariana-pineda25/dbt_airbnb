@@ -17,8 +17,18 @@ clean-targets:
   #dbt_airbnb:
     #+schema: raw
 
+on-run-start: #Hooks to run at the start of a dbt run
+  - "CREATE TABLE IF NOT EXISTS {{ target.schema }}.audit_log (
+      model_name STRING,
+      run_timestamp TIMESTAMP
+    )"
+
 models:
   dbt_airbnb:
+    +grants: 
+      select: ["transform"] #Grant select permissions to transform on all models in the dbt_airbnb project
+    +post-hook: #Post hooks to run after a model is built
+      - "INSERT INTO {{ target.schema }}.audit_log VALUES ('{{ this }}', CURRENT_TIMESTAMP)"
     +materialized: view
 
     src:
