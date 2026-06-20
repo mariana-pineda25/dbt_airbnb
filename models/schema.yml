@@ -1,7 +1,8 @@
 models:
+
   - name: dim_listings_cleansed
     description: "This is the dimension table for listings, containing cleansed and standardized data about Airbnb listings."
-    data_tests:
+    data_tests: #Data test
       - minimum_row_count:
           arguments:
             min_row_count: 1000
@@ -71,6 +72,17 @@ models:
 
       - name: created_at
         data_type: timestamp
+ 
+  - name: dim_listings_w_hosts
+    data_tests:
+    - dbt_expectations.expect_table_row_count_to_equal_other_table:
+        arguments:
+          compare_model: source('dbt_airbnb', 'listings') #ref("src_listings")
+          #group_by: [col1, col2] # (Optional)
+          #compare_group_by: [col1, col2] # (Optional)
+          #factor: 1 # (Optional)
+          #row_condition: "id is not null" # (Optional)
+          #compare_row_condition: "id is not null" # (Optional)
 
   - name: fct_reviews
     columns:
