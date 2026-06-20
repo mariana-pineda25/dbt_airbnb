@@ -48,3 +48,6 @@ models:
 data_tests:
   +store_failures: true
   +schema: _tests_failures #store failed records in a the schema, use the SQL query generated to review the errors
+
+vars:
+  user_name: "Mariana"
