@@ -39,9 +39,11 @@ models:
 
     fct:
       +materialized: table
+      +tags: ['fact']
 
     mart:
       +materialized: table
+      +tags: ['fact']
 
 data_tests:
   +store_failures: true

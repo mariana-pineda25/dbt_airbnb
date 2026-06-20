@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='view',
+        event_time = 'created_at'
+    )
+}}
+
 with src_listings as (
 
     select
