@@ -16,7 +16,7 @@ h as (
 
     select
         *
-    from {{ ref('dim_hosts_cleansed') }}
+    from {{ ref('dim_hosts_cleansed', v=2) }}
 
 )
 
