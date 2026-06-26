@@ -5,6 +5,5 @@ target/
 .venv/
 .vscode
 .env
-profiles.yml
 set-env.ps1
 .user.yml
