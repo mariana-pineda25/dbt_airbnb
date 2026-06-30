@@ -14,7 +14,7 @@ with src_hosts as (
 
 select
     host_id,
-    nvl(host_name, 'N/A') as host_name, -- Change vs V1
+    nvl(host_name, 'N/A') as host_full_name, -- Change vs V1
     is_superhost,
     created_at,
     updated_at
