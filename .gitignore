@@ -2,6 +2,7 @@ dbt_packages/
 dbt_internal_packages/
 logs/
 target/
+target-prod/
 .venv/
 .vscode
 .env

@@ -11,6 +11,7 @@ snapshot-paths: ["snapshots"]
 clean-targets:
   - "target"
   - "dbt_packages"
+  - "target-prod"
 
 #seeds:
   # Builds seeds into '<your_schema_name>_raw'
