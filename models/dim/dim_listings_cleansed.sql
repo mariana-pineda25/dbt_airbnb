@@ -22,7 +22,8 @@ select
         else minimum_nights
     end as minimum_nights,
     host_id,
-    replace(price_str, '$')::number(10, 2) as price, --replace $ and convert to number
+    replace(price_str, '$')::number(10, 2) as price, --replace $ and convert to number,
+    price_str,
     created_at,
     updated_at
 from src_listings
