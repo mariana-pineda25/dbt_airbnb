@@ -28,7 +28,7 @@ select
     l.price,
     l.price_str,
     l.host_id,
-    h.host_name,
+    h.host_full_name,
     h.is_superhost as host_is_superhost,
     l.created_at,
     greatest(

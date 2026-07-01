@@ -12,6 +12,6 @@ unit_tests:
           - {full_moon_date: '2025-01-14'} # Full moon example date
     expect:
       rows:
-        - {review_date: '2025-01-13', is_full_moon: "not full moon"} # Expected output when comparing the example date with the given records of the fact
-        - {review_date: '2025-01-14', is_full_moon: "not full moon"}
-        - {review_date: '2025-01-15', is_full_moon: "full moon"}
+        - {review_date: '2025-01-13', is_full_moon_bool: "not full moon"} # Expected output when comparing the example date with the given records of the fact
+        - {review_date: '2025-01-14', is_full_moon_bool: "not full moon"}
+        - {review_date: '2025-01-15', is_full_moon_bool: "full moon"}
