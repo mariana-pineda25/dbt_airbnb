@@ -37,4 +37,4 @@ select
     ) as updated_at
 from l
 left join h
-    on h.host_id = l.host_id
+    on l.host_id = h.host_id
